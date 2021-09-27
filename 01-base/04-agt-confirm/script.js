@@ -9,8 +9,25 @@
 // NOTE: don't focus on the existing code structure for now.
 // You will have time to focus on it later.
 
-(function() {
+(function () {
+  // your code here
+  const humanInfo = [{ age: null }, { gender: "" }, { town: "" }];
+  function guestData() {
+    humanInfo.age = +prompt("What is you age?");
+    humanInfo.gender = prompt("Man or Woman?");
+    humanInfo.town = prompt("What city do you live in?");
+    alert(
+      `
+              Age: ${humanInfo.age}
+              Gender: ${humanInfo.gender}
+              Town: ${humanInfo.town}
+              `
+    );
+  }
+  guestData();
 
-    // your code here
-
+  let confirmData = confirm("Is the data correct?");
+  if (confirmData === false) {
+    guestData();
+  }
 })();
