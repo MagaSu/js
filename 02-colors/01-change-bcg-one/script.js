@@ -8,9 +8,22 @@
 
 // NOTE: don't focus on the existing code structure for now.
 // You will have time to focus on it later.
+(function () {
+  // your code here
+  document
+    .getElementById("red")
+    .addEventListener("click", () => changeColor("red"));
+  document
+    .getElementById("green")
+    .addEventListener("click", () => changeColor("green"));
+  document
+    .getElementById("yellow")
+    .addEventListener("click", () => changeColor("yellow"));
+  document
+    .getElementById("blue")
+    .addEventListener("click", () => changeColor("blue"));
 
-(function() {
-
-    // your code here
-
+  function changeColor(color) {
+    document.body.style.backgroundColor = `${color}`;
+  }
 })();
