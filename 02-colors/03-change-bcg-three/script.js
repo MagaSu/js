@@ -9,8 +9,12 @@
 // NOTE: don't focus on the existing code structure for now.
 // You will have time to focus on it later.
 
-(function() {
+(function () {
+  // your code here
+  document.getElementById("run").addEventListener("click", () => changeColor());
 
-    // your code here
-
+  function changeColor() {
+    let randomColor = (Math.random() * 0xfffff * 1000000).toString(16);
+    document.body.style.backgroundColor = `#${randomColor.slice(0, 6)}`;
+  }
 })();

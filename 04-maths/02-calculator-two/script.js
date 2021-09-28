@@ -9,16 +9,48 @@
 // NOTE: don't focus on the existing code structure for now.
 // You will have time to focus on it later.
 
-(function() {
-    // to get the value of an input: document.getElementById("element-id").value
+(function () {
+  // to get the value of an input: document.getElementById("element-id").value
 
-    var performOperation = function(operation) {
-        // perform the operation
-    };
+  var performOperation = function (operation) {
+    // perform the operation
 
-    Array.from(document.querySelectorAll("button.operator")).forEach(function($btn) {
-        $btn.addEventListener("click", function() {
-            performOperation($btn.id);
-        });
+    let opOne = Number(document.getElementById("op-one").value);
+    let opTwo = Number(document.getElementById("op-two").value);
+    let result;
+    let char;
+
+    switch (operation) {
+      case "addition": {
+        result = opOne + opTwo;
+        alert(`${opOne} + ${opTwo} = ${result}`);
+        break;
+      }
+      case "substraction": {
+        result = opOne - opTwo;
+        alert(`${opOne} - ${opTwo} = ${result}`);
+        break;
+      }
+      case "multiplication": {
+        result = opOne * opTwo;
+        alert(`${opOne} * ${opTwo} = ${result}`);
+      }
+      case "division": {
+        result = opOne / opTwo;
+        alert(`${opOne} / ${opTwo} = ${result}`);
+        break;
+      }
+      default: {
+        break;
+      }
+    }
+  };
+
+  Array.from(document.querySelectorAll("button.operator")).forEach(function (
+    $btn
+  ) {
+    $btn.addEventListener("click", function () {
+      performOperation($btn.id);
     });
+  });
 })();

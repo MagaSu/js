@@ -9,10 +9,12 @@
 // NOTE: don't focus on the existing code structure for now.
 // You will have time to focus on it later.
 
-(function() {
+(function () {
+  // to change the content of a tag: document.getElementById("element-id").innerHTML = "new-value"
+  // your code here
 
-    // to change the content of a tag: document.getElementById("element-id").innerHTML = "new-value"
-
-    // your code here
-
+  setInterval(() => {
+    let now = new Date();
+    document.getElementById("target").innerHTML = now;
+  }, 1000);
 })();
