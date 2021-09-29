@@ -9,16 +9,23 @@
 // NOTE: don't focus on the existing code structure for now.
 // You will have time to focus on it later.
 
-(function() {
+(function () {
+  var gallery = [
+    "../../_shared/img/bell.svg",
+    "../../_shared/img/clock.svg",
+    "../../_shared/img/compass.svg",
+    "../../_shared/img/lemon.svg",
+    "../../_shared/img/map.svg",
+  ];
 
-    var gallery= [
-        "../../_shared/img/bell.svg",
-        "../../_shared/img/clock.svg",
-        "../../_shared/img/compass.svg",
-        "../../_shared/img/lemon.svg",
-        "../../_shared/img/map.svg",
-    ];
+  // your code here
+  let carousel = document.querySelector("img");
+  let i = 0;
 
-    // your code here
-
+  document.getElementById("next").addEventListener("click", () => {
+    i++;
+    i = i >= 5 ? (i = 0) : i;
+    console.log(i);
+    carousel.setAttribute("src", `${gallery[i]}`);
+  });
 })();

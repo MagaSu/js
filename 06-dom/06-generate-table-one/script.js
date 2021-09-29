@@ -9,8 +9,22 @@
 // NOTE: don't focus on the existing code structure for now.
 // You will have time to focus on it later.
 
-(function() {
+(function () {
+  // your code here
 
-    // your code here
-
+  document.getElementById("target").innerHTML = `
+  <table>
+    <tr>
+        <td></td>
+    </tr>
+    <tr></tr>
+    <tr></tr>
+    <tr></tr>
+    <tr></tr>
+    <tr></tr>
+    <tr></tr>
+    <tr></tr>
+    <tr></tr>
+    <tr></tr>
+  </table>`;
 })();

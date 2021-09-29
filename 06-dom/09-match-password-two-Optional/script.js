@@ -9,8 +9,18 @@
 // NOTE: don't focus on the existing code structure for now.
 // You will have time to focus on it later.
 
-(function() {
+(function () {
+  // your code here
+  let passOne = document.getElementById("pass-one");
+  let passTwo = document.getElementById("pass-two");
 
-    // your code here
-
+  document.getElementById("run").addEventListener("click", () => {
+    if (passOne.value != passTwo.value) {
+      passOne.classList.add("error");
+      passTwo.classList.add("error");
+    } else {
+      passOne.classList.remove("error");
+      passTwo.classList.remove("error");
+    }
+  });
 })();

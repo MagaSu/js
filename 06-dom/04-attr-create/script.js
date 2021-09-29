@@ -9,8 +9,13 @@
 // NOTE: don't focus on the existing code structure for now.
 // You will have time to focus on it later.
 
-(function() {
+(function () {
+  // your code here
+  let source = document.getElementById("source");
+  let dataImage = source.getAttribute("data-image");
+  let target = document.getElementById("target");
 
-    // your code here
+  target.innerHTML = `<img src="${dataImage}" />`;
 
+  source.remove();
 })();

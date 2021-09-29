@@ -9,8 +9,11 @@
 // NOTE: don't focus on the existing code structure for now.
 // You will have time to focus on it later.
 
-(function() {
-
-    // your code here
-
+(function () {
+  // your code here
+  let passOne = document.getElementById("pass-one");
+  passOne.addEventListener("input", () => {
+    passOne.value = passOne.value.substr(0, 10);
+    document.getElementById("counter").innerText = `${passOne.value.length}/10`;
+  });
 })();
