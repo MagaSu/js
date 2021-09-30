@@ -10,5 +10,29 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+  // your code here
+  async function getData() {
+    let data = await fetch("../../_shared/api.json");
+    let heroes = await data.json();
+    console.log(heroes);
+  }
+  document.getElementById("run").addEventListener("click", () => {
+    getData();
+  });
 })();
+// ANOTHER WAY
+
+// fetch("../../_shared/api.json")
+//   .then((response) => {
+//     if (!response.ok) {
+//       throw new Error("HTTP error " + response.status);
+//     }
+//     return response.json();
+//   })
+//   .then((json) => {
+//     this.users = json;
+//     console.log(this.users);
+//   })
+//   .catch(function () {
+//     this.dataError = true;
+//   });
