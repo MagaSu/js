@@ -9,8 +9,13 @@
 // NOTE: don't focus on the existing code structure for now.
 // You will have time to focus on it later.
 
-(function() {
+(function () {
+  // your code here
+  let target = document.getElementById("target");
+  let slider = document.getElementById("slider");
+  slider.addEventListener("change", () => changeValue());
 
-    // your code here
-
+  function changeValue() {
+    target.innerText = 0 + slider.value;
+  }
 })();

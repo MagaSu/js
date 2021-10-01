@@ -9,8 +9,12 @@
 // NOTE: don't focus on the existing code structure for now.
 // You will have time to focus on it later.
 
-(function() {
-
-    // your code here
-
+(function () {
+  //   let target = document.getElementById("target");
+  //   let btnOne = document.getElementById("btn-one");
+  //   let btnTwo = document.getElementById("btn-two");
+  //   let btnThree = document.getElementById("btn-three");
+  //   let btnFour = document.getElementById("btn-four");
+  //   btnOne.addEventListener("click", () => {});
+  // your code here
 })();

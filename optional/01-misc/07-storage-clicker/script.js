@@ -9,8 +9,19 @@
 // NOTE: don't focus on the existing code structure for now.
 // You will have time to focus on it later.
 
-(function() {
-
-    // your code here
-
+(function () {
+  // your code here
+  //Not finished
+  //   let target = document.getElementById("target");
+  //   let counter = 0;
+  //   function getData() {
+  //     return (counter = 10);
+  //   }
+  //   getData();
+  //   console.log(counter);
+  //   document.getElementById("increment").addEventListener("click", () => {
+  //     counter++;
+  //     localStorage.setItem(counter, "counter");
+  //     target.innerText = counter;
+  //   });
 })();

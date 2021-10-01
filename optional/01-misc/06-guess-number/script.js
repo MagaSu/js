@@ -9,8 +9,24 @@
 // NOTE: don't focus on the existing code structure for now.
 // You will have time to focus on it later.
 
-(function() {
+(function () {
+  // your code here
+  let secretNumber = Math.trunc(Math.random() * 100) + 1;
+  let gameResult = false;
+  let i = 0;
 
-    // your code here
+  console.log(secretNumber);
 
+  do {
+    let question = +prompt("Guess the number");
+    i++;
+    if (question < secretNumber) {
+      alert("Higher!");
+    } else if (question > secretNumber) {
+      alert("Lower!");
+    } else if (question == secretNumber) {
+      gameResult = true;
+      alert(`That's it! You needed ${i} guesses`);
+    }
+  } while (gameResult == false);
 })();

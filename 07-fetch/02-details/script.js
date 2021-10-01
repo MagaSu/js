@@ -12,21 +12,28 @@
 (() => {
   // your code here
   // NOT FINISHED YET
-  //   let heroId = document.getElementById("hero-id");
-  //   function getElement(elemId) {
-  //     return document.getElementById(elemId);
-  //   }
-  //   const wrapWithTag = (content, tagName) => {
-  //     return `<${tagName}>${content}</${tagName}>`;
-  //   };
-  //   async function getData(id) {
-  //     let data = await fetch("../../_shared/api.json");
-  //     let main = await data.json();
-  //     let heroes = main.heroes;
-  //     let hero = heroes[id - 1];
-  //     document.getElementById("target").append("li");
-  //   }
-  //   document.getElementById("run").addEventListener("click", () => {
-  //     getData(heroId.value);
-  //   });
+  let heroId = document.getElementById("hero-id");
+  let ol = document.getElementById("target");
+
+  async function getData(id) {
+    let data = await fetch("../../_shared/api.json");
+    let main = await data.json();
+    let heroes = main.heroes;
+
+    ol.innerHTML = "";
+    for (let item of heroes) {
+      if (item.id == id) {
+        for (let key in item) {
+          if (key != "id") {
+            let tag = document.createElement("li");
+            tag.innerText = `${key}: ${item[key]}`;
+            ol.appendChild(tag);
+          }
+        }
+      }
+    }
+  }
+  document.getElementById("run").addEventListener("click", () => {
+    getData(heroId.value);
+  });
 })();
