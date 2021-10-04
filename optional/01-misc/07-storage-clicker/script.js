@@ -11,17 +11,26 @@
 
 (function () {
   // your code here
-  //Not finished
-  //   let target = document.getElementById("target");
-  //   let counter = 0;
-  //   function getData() {
-  //     return (counter = 10);
-  //   }
-  //   getData();
-  //   console.log(counter);
-  //   document.getElementById("increment").addEventListener("click", () => {
-  //     counter++;
-  //     localStorage.setItem(counter, "counter");
-  //     target.innerText = counter;
-  //   });
+  let target = document.getElementById("target");
+  let counter = 0;
+
+  function getData() {
+    counter = parseInt(localStorage.getItem("counter"), 10);
+    target.innerText = counter;
+  }
+
+  function setData() {
+    counter++;
+    target.innerText = counter;
+    saveData();
+  }
+
+  function saveData() {
+    localStorage.setItem("counter", counter);
+  }
+
+  getData();
+  document.getElementById("increment").addEventListener("click", () => {
+    setData();
+  });
 })();

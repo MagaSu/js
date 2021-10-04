@@ -10,5 +10,14 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+  // your code here
+  document.getElementById("run").addEventListener("click", () => {
+    console.log(
+      new Promise(() => {
+        window.lib.getPosts((error, articles) => {
+          console.log(articles);
+        });
+      })
+    );
+  });
 })();

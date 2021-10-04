@@ -12,17 +12,17 @@
 (() => {
   // your code here
   let heroId = document.getElementById("hero-id");
+  let heroes = [];
 
-  async function getData(id = "") {
+  async function getData() {
     let data = await fetch("../../_shared/api.json");
     let main = await data.json();
-    let heroes = main.heroes;
+    heroes.push(...main.heroes);
 
-    if (id != "") {
-      let index = heroes.findIndex((hero) => hero.id == id);
-      heroes.splice(index, 1);
-    }
+    loadData();
+  }
 
+  function loadData() {
     for (let item of heroes) {
       for (let key in item) {
         if (key != "id") {
@@ -33,7 +33,20 @@
     }
   }
 
+  function deleteData(id = "") {
+    if (id != "") {
+      let index = heroes.findIndex((hero) => hero.id == id);
+      heroes.splice(index, 1);
+      console.log("========= After removing =============");
+      loadData();
+    } else {
+      console.error("Enter Hero ID");
+    }
+  }
+
   document.getElementById("run").addEventListener("click", () => {
-    getData(heroId.value);
+    deleteData(heroId.value);
   });
+
+  getData();
 })();
