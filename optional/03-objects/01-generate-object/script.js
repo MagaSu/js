@@ -10,5 +10,17 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+  // your code here
+  let actor = new Object();
+  actor.firstname = "Johnny";
+  actor.lastName = "Depp";
+  actor.age = 58;
+  actor.city = "Unknown";
+  actor.country = "France";
+
+  document.getElementById("run").addEventListener("click", () => {
+    for (let item in actor) {
+      //   Lunch time
+    }
+  });
 })();
