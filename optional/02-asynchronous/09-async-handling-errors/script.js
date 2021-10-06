@@ -10,5 +10,14 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+  // your code here
+  async function getData() {
+    let response = await window.lib.getPosts();
+  }
+
+  document.getElementById("run").addEventListener("click", () => {
+    getData().catch(function handleError(err) {
+      err.message;
+    });
+  });
 })();

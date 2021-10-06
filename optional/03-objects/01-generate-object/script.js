@@ -11,7 +11,7 @@
 
 (() => {
   // your code here
-  let actor = new Object();
+  const actor = new Object();
   actor.firstname = "Johnny";
   actor.lastName = "Depp";
   actor.age = 58;
@@ -19,8 +19,8 @@
   actor.country = "France";
 
   document.getElementById("run").addEventListener("click", () => {
-    for (let item in actor) {
-      //   Lunch time
+    for (let key in actor) {
+      console.log(key);
     }
   });
 })();

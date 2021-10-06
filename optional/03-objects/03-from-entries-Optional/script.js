@@ -10,7 +10,15 @@
 // You will have time to focus on it later.
 
 (() => {
-    const keys = ["name", "species", "age", "gender", "color"];
-    const values = ["Skitty", "cat", 9, "female", "tabby"];
-    // your code here
+  const keys = ["name", "species", "age", "gender", "color"];
+  const values = ["Skitty", "cat", 9, "female", "tabby"];
+  // your code here
+
+  const pokemon = keys.map((value, index) => [value, values[index]]);
+
+  const pokemonObj = Object.fromEntries(pokemon);
+
+  document.getElementById("run").addEventListener("click", () => {
+    console.log(pokemonObj);
+  });
 })();

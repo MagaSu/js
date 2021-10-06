@@ -11,13 +11,13 @@
 
 (() => {
   // your code here
+  async function getData() {
+    let response = await window.lib.getPosts();
+    let data = await response;
+    console.log(data);
+  }
+
   document.getElementById("run").addEventListener("click", () => {
-    console.log(
-      new Promise(() => {
-        window.lib.getPosts((error, articles) => {
-          console.log(articles);
-        });
-      })
-    );
+    getData();
   });
 })();
