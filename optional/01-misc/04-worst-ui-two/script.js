@@ -10,11 +10,29 @@
 // You will have time to focus on it later.
 
 (function () {
-  //   let target = document.getElementById("target");
-  //   let btnOne = document.getElementById("btn-one");
-  //   let btnTwo = document.getElementById("btn-two");
-  //   let btnThree = document.getElementById("btn-three");
-  //   let btnFour = document.getElementById("btn-four");
-  //   btnOne.addEventListener("click", () => {});
   // your code here
+  let target = document.getElementById("target");
+
+  let partOne = document.getElementById("part-one");
+  let partTwo = document.getElementById("part-two");
+  let partThree = document.getElementById("part-three");
+  let partFour = document.getElementById("part-four");
+
+  const btns = [partOne, partTwo, partThree, partFour];
+
+  btns.forEach((btn) => {
+    let result = 0;
+
+    btn.addEventListener("click", () => {
+      result = +btn.innerHTML + 1;
+      if (result > btn.getAttribute("data-max"))
+        result = btn.getAttribute("data-min");
+
+      if (result <= 9) btn.innerHTML = `0${result}`;
+      else {
+        btn.innerHTML = `${result}`;
+      }
+      target.innerHTML = `0${partOne.innerHTML}${partTwo.innerHTML}${partThree.innerHTML}${partFour.innerHTML}`;
+    });
+  });
 })();

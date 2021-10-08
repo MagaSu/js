@@ -9,14 +9,20 @@
 // NOTE: don't focus on the existing code structure for now.
 // You will have time to focus on it later.
 
-(function() {
+(function () {
+  // to get the value of an input: document.getElementById("element-id").value
+  const parent = document.querySelector(".material");
+  const resultTag = document.createElement("h2");
+  parent.appendChild(resultTag);
 
-    // to get the value of an input: document.getElementById("element-id").value
+  const input = document.getElementById("numbers");
+  let result = [];
 
-    document.getElementById("run").addEventListener("click", function() {
+  document.getElementById("run").addEventListener("click", function () {
+    // your code here
+    result = input.value.split(",");
+    result = result.map((num) => (num = parseInt(num))).sort((x, y) => x - y);
 
-        // your code here
-
-    });
-
+    resultTag.innerHTML = `${result}`;
+  });
 })();

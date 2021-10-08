@@ -11,37 +11,39 @@
 
 (function () {
   // your code here
-  document.getElementById("target").innerHTML = `
-  <table>
-    <tr>
-        <td>1 * 1 = 1</td>
-    </tr>
-    <tr>
-        <td>1 * 2 = 2</td>
-    </tr>
-    <tr>
-        <td>1 * 3 = 3</td>
-    </tr>
-    <tr>
-        <td>1 * 4 = 4</td>    
-    </tr>
-    <tr>
-        <td>1 * 5 = 5</td>
-    </tr>
-    <tr>
-        <td>1 * 6 = 6</td>
-    </tr>
-    <tr>
-        <td>1 * 7 = 7</td>
-    </tr>
-    <tr>
-        <td>1 * 8 = 8</td>
-    </tr>
-    <tr>
-        <td>1 * 9 = 9</td>
-    </tr>
-    <tr>
-        <td>1 * 10 = 10</td>
-    </tr>
-  </table>`;
+  (function () {
+    // your code here
+    const target = document.getElementById("target");
+    let rowTag, tdTag, trArr, tdArr;
+
+    for (let i = 1; i <= 11; i++) {
+      rowTag = document.createElement("tr");
+
+      for (let j = 1; j <= 11; j++) {
+        tdTag = document.createElement("td");
+        target.appendChild(rowTag);
+        rowTag.appendChild(tdTag);
+      }
+    }
+
+    trArr = document.querySelectorAll("tr");
+    tdArr = document.querySelectorAll("td");
+
+    for (let l = 0; l <= 10; l++) {
+      tdArr[l].innerHTML = l;
+    }
+
+    for (let k = 0; k < tdArr.length; k++) {
+      if (k % 11 === 0 || k === 0) tdArr[k].innerHTML = k / 11;
+    }
+
+    tdArr.forEach((tdElem, idx) => {
+      if (idx % 11 !== 0 && idx !== 0 && idx > 10) {
+        let row = idx % 11;
+        let column = Math.floor(idx / 11);
+
+        tdElem.innerHTML = `${row * column}`;
+      }
+    });
+  })();
 })();

@@ -9,24 +9,34 @@
 // NOTE: don't focus on the existing code structure for now.
 // You will have time to focus on it later.
 
-(function() {
+(function () {
+  var fruits = [
+    "cerise",
+    "durian",
+    "pomme",
+    "poire",
+    "fraise",
+    "tomate",
+    "orange",
+    "mandarine",
+    "fraise",
+    "durian",
+    "pêche",
+    "cerise",
+    "raisin",
+    "cerise",
+  ];
 
-    var fruits = [
-        "cerise",
-        "durian",
-        "pomme",
-        "poire",
-        "fraise",
-        "tomate",
-        "orange",
-        "mandarine",
-        "fraise",
-        "durian",
-        "pêche",
-        "cerise",
-        "raisin",
-        "cerise",
-    ];
+  // your code here
+  const parent = document.querySelector(".material");
+  const resultTag = document.createElement("h2");
+  parent.appendChild(resultTag);
 
-    // your code here
+  const btn = document.getElementById("run");
+  let result = [...new Set(fruits)];
+
+  btn.addEventListener("click", () => {
+    resultTag.innerHTML = `${result}`;
+    console.log(result);
+  });
 })();

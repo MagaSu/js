@@ -12,19 +12,18 @@
 (function () {
   // your code here
 
-  document.getElementById("target").innerHTML = `
-  <table>
-    <tr>
-        <td></td>
-    </tr>
-    <tr></tr>
-    <tr></tr>
-    <tr></tr>
-    <tr></tr>
-    <tr></tr>
-    <tr></tr>
-    <tr></tr>
-    <tr></tr>
-    <tr></tr>
-  </table>`;
+  (function () {
+    // your code here
+    const target = document.getElementById("target");
+
+    for (let i = 1; i <= 10; i++) {
+      const rowTag = document.createElement("tr");
+      const tdTag = document.createElement("td");
+      rowTag.appendChild(tdTag);
+
+      tdTag.innerHTML = "Hello, World!";
+
+      target.appendChild(rowTag);
+    }
+  })();
 })();

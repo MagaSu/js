@@ -11,13 +11,12 @@
 
 (() => {
   // your code here
-  async function getData() {
-    let response = await window.lib.getPosts();
-  }
-
-  document.getElementById("run").addEventListener("click", () => {
-    getData().catch(function handleError(err) {
-      err.message;
-    });
+  document.getElementById("run").addEventListener("click", async () => {
+    try {
+      let persons = await window.lib.getPersons();
+      console.log(persons);
+    } catch (e) {
+      console.error(e);
+    }
   });
 })();

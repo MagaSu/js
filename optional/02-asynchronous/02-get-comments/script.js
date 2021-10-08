@@ -12,20 +12,15 @@
 (() => {
   // your code here
 
-  const getComments2 = (article) => (error, comments) => {
+  const attachComments = async (article) => (error, comments) => {
     article.comments = comments;
     console.log(error ? error : article);
   };
 
-  function getComments(error, comments) {
-    article.comments = comments;
-    console.log(error ? error : article);
-  }
-
   document.getElementById("run").addEventListener("click", () => {
     window.lib.getPosts((error, articles) => {
       articles.forEach((article) => {
-        window.lib.getComments(article.id, getComments2(article));
+        window.lib.getComments(article.id, attachComments(article));
       });
     });
   });
